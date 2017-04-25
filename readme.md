@@ -1,1 +1,1 @@
-Timer and Countdown App using React
+Boilerplate Code for React Projects
