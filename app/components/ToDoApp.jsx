@@ -1,8 +1,8 @@
 var React = require('react');
-var ToDoList = require('ToDoList');
+var TodoList = require('TodoList');
 
 
-var ToDoApp = React.createClass({
+var TodoApp = React.createClass({
   getInitialState: function (){
     return {
       todos: [
@@ -28,10 +28,10 @@ var ToDoApp = React.createClass({
     var {todos} = this.state;
     return (
       <div>
-        <ToDoList todos={todos}/>
+        <TodoList todos={todos}/>
       </div>
     )
   }
 });
 
-module.exports = ToDoApp;
+module.exports = TodoApp;
