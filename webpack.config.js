@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   entry: [
@@ -24,7 +25,8 @@ module.exports = {
     modulesDirectories: [
       'node_modules',
       './app/components',
-      './app/api'
+      './app/api',
+      './app/styles'
     ],
     alias:{
       applicationStyles: 'app/styles/app.scss'
@@ -41,6 +43,11 @@ module.exports = {
         test: /\.jsx?$/,       //$ sign looks for the end of the file name and looks for jsx
         exclude: /(node_modules|bower_components)/
       }
+    ]
+  },
+  sassLoader: {
+    includePaths: [
+      path.resolve(__dirname, './node_modules/foundation-sites/scss')
     ]
   },
   devtool: 'cheap-module-eval-source-map'
