@@ -16,3 +16,5 @@ ReactDOM.render(
   <ToDoApp/>,
   document.getElementById('app')
 );
+
+require('./redux-example.jsx');
