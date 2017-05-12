@@ -3,12 +3,10 @@ var ReactDOM = require('react-dom');
 var {Provider} = require('react-redux');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
-var ToDoApp = require('ToDoApp');
+var TodoApp = require('TodoApp');
 var actions = require('actions');
 var store = require('configureStore').configure();
 var TodoAPI = require('TodoAPI');
-
-import './../playground/index';
 
 store.subscribe(() => {
   var state = store.getState();
@@ -17,18 +15,17 @@ store.subscribe(() => {
 });
 
 var initialTodos = TodoAPI.getTodos();
-store.dispatch(actions.addTodo(initialTodos));
+store.dispatch(actions.addTodos(initialTodos));
 
-//Load foundations
+// Load foundation
 $(document).foundation();
 
-//load app.css
+// App css
 require('style!css!sass!applicationStyles')
-
 
 ReactDOM.render(
   <Provider store={store}>
-    <ToDoApp/>
+    <TodoApp/>
   </Provider>,
   document.getElementById('app')
 );

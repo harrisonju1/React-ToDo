@@ -1,9 +1,11 @@
-@import "base/variables"; //leave off underscore and file extension
+@import "base/variables";
 
-//foundation
+// foundation
+@import "base/foundation-settings";
+@import "foundation";
+@include foundation-everything;
 
-
-
-@import "components/page-title";
+// Components
 @import "components/container";
+@import "components/page-title";
 @import "components/todo";

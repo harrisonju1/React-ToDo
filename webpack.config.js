@@ -5,10 +5,10 @@ module.exports = {
   entry: [
     'script!jquery/dist/jquery.min.js',
     'script!foundation-sites/dist/foundation.min.js',
-    './app/app.jsx',
+    './app/app.jsx'
   ],
   externals: {
-    jquery:'jQuery'
+    jquery: 'jQuery'
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -25,10 +25,10 @@ module.exports = {
     modulesDirectories: [
       'node_modules',
       './app/components',
-      './app/api',
-      './app/styles'
+      './app/api'
     ],
-    alias:{
+    alias: {
+      app: 'app',
       applicationStyles: 'app/styles/app.scss',
       actions: 'app/actions/actions.jsx',
       reducers: 'app/reducers/reducers.jsx',
@@ -36,14 +36,14 @@ module.exports = {
     },
     extensions: ['', '.js', '.jsx']
   },
-  module: {//object
-    loaders: [//array of different loaders to use
+  module: {
+    loaders: [
       {
-        loader: 'babel-loader', //telling babel loader to take our files and parse them through react, get the output, and run through es2015
-        query:{
+        loader: 'babel-loader',
+        query: {
           presets: ['react', 'es2015', 'stage-0']
         },
-        test: /\.jsx?$/,       //$ sign looks for the end of the file name and looks for jsx
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/
       }
     ]
