@@ -10,7 +10,7 @@
     "start": "node server.js"
   },
   "engines": {
-    "node": "^7.9.0"
+    "node": "^5.11.1"
   },
   "author": "Harrison Ju",
   "license": "MIT",
